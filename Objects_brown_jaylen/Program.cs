@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Computer myComputer = new Computer("Aplle","All-in-one",true);
+            IBootUp myBootUp = myComputer;
+            Console.WriteLine(myComputer.Equals(myBootUp));
         }
     }
 }
