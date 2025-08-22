@@ -6,25 +6,34 @@ using System.Threading.Tasks;
 
 namespace Objects_brown_jaylen
 {
+    // Makes an internal class named Computer and implements the IBootUp interface
     internal class Computer : IBootUp
     {
+        // Property checking whether the computer is powered on or off
         public bool IsOn { get; set; }
+
+        // Property for the brand of the computer
         public string Brand { get; set; }
 
+        // Property for the type of computer 
         public string Type { get; set; }
 
-        public Computer(string brand, string type, bool isOn) 
+        // Constructor make a new Computer object with brand, type, and power state
+        public Computer(string brand, string type, bool isOn)
         {
             Brand = brand;
-            Type = type;    
+            Type = type;
             IsOn = isOn;
-             
         }
 
+        // Method to toggle the power of the computer
         public void PowerOnOff()
         {
-         IsOn = !IsOn;
-            if (IsOn== true) 
+            // Flips true and false
+            IsOn = !IsOn;
+
+            // Print a message based on power 
+            if (IsOn == true)
             {
                 Console.WriteLine("The computer is booting up");
             }
@@ -33,9 +42,12 @@ namespace Objects_brown_jaylen
                 Console.WriteLine("The computer is shutting down");
             }
         }
+
+        // Overrides ToString() method 
         public override string ToString()
         {
-            return $"the computer is made by {Brand} and is a {Type} computer";
+            return $"The computer is made by {Brand} and is a(n) {Type} computer, it is on: {IsOn}";
         }
     }
+
 }
